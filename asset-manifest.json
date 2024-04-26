@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/groomTest_frontend/static/css/main.02949a13.css",
+    "main.js": "/groomTest_frontend/static/js/main.d954214c.js",
+    "static/js/453.08020c79.chunk.js": "/groomTest_frontend/static/js/453.08020c79.chunk.js",
+    "index.html": "/groomTest_frontend/index.html",
+    "main.02949a13.css.map": "/groomTest_frontend/static/css/main.02949a13.css.map",
+    "main.d954214c.js.map": "/groomTest_frontend/static/js/main.d954214c.js.map",
+    "453.08020c79.chunk.js.map": "/groomTest_frontend/static/js/453.08020c79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.02949a13.css",
+    "static/js/main.d954214c.js"
+  ]
+}
