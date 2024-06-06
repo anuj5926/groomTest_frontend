@@ -4,33 +4,41 @@ import { IoMdMail } from "react-icons/io";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { InfinitySpin } from 'react-loader-spinner'
 
 const Login = () => {
   const navigate = useNavigate();
   const [formValue, setFormValue] = useState({ username: "", password: "" });
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   const [error, setError] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
+  
+const handleClick=()=>{
+  setIsLoading(true)
+}
   const handleChange = (e) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://groomtest.onrender.com/growCool/admin/login",
+        `${process.env.REACT_APP_LOGIN}`,
         formValue
       );
       
 
       if (response.data.status) {
+        setIsLoading(false);
         localStorage.setItem("auth_token", response.data.data.auth_token);
         localStorage.setItem("username", response.data.data.username);
         navigate("/admin");
-        alert("username", response.data.data.username);
+         
       } else {
-        setError(response.data.message);
+        alert("Internal server Error")
+        //setError(response.data.message);
         //alert(response.data.message);
       }
     } catch (error) {
@@ -48,7 +56,7 @@ const Login = () => {
             <div className="signin-image">
               <figure>
                 <img
-                  src="assets/img//signin-image.jpg"
+                  src="/img/signin-image.jpg"
                   alt="sing up image"
                 />
               </figure>
@@ -58,10 +66,11 @@ const Login = () => {
               <form onSubmit={handleSubmit} className="register-form" id="login-form">
                 <div className="form-group">
                   <label htmlFor="username">
-                    <FaUser />
+                    <FaUser /><p></p>
                   </label>
                   <input
                     type="text"
+                    style={{marginLeft:"3px"}}
                     name="username"
                     id="username"
                     placeholder="Your Name"
@@ -70,10 +79,11 @@ const Login = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="password">
-                    <RiLockPasswordFill />
-                  </label>
+                  <label htmlFor="password" >
+                    <RiLockPasswordFill /> <p></p> 
+                  </label > 
                   <input
+                  style={{marginLeft:"4px"}}
                     type="password"
                     name="password"
                     id="password"
@@ -82,16 +92,25 @@ const Login = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="form-group form-button">
+                <div className="form-group form-button"  onClick={handleClick}>
+               
                   <input
                     type="submit"
                     name="signin"
                     id="signin"
                     className="form-submit"
                     value="Log in"
+                    
                   />
+                  { (isLoading&& !error)&& <InfinitySpin
+  visible={true}
+  width="100"
+  color="#89CFF0"
+  ariaLabel="infinity-spin-loading"
+  />}
                 </div>
-                {error && <p className="error-message mt-3">{error}</p>}
+                
+                {error && <p className="error-message mt-3 text-danger">{error}</p>}
               </form>
             </div>
           </div>

@@ -1,5 +1,4 @@
 {
-  "homepage": "https://anuj5926.github.io/groomTest_frontend",
   "name": "vinay",
   "version": "0.1.0",
   "private": true,
@@ -13,6 +12,8 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-icons": "^5.1.0",
+    "react-loader-spinner": "^6.1.6",
+    "react-paginate": "^8.2.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
