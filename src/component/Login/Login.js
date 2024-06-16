@@ -37,13 +37,13 @@ const handleClick=()=>{
         navigate("/admin");
          
       } else {
-        alert("Internal server Error")
-        //setError(response.data.message);
+       
+        setError(response.data.message);
         //alert(response.data.message);
       }
     } catch (error) {
       console.error("Login error:", error);
-      setError("Login failed. Please try again.");
+      setError("Login failed. Server is down Please try again.");
       //alert("Login failed. Please try again.");
     }
   };

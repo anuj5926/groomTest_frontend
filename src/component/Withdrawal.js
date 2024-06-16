@@ -137,9 +137,12 @@ function Withdrawal() {
 
 
         <>    <Header />
+<h3 className="text-center" style={{ color: '#000', backgroundColor: '#d5c5c5', margin: '0px 0px 0px ', padding: '0.8rem' }}>Withdrawal Details</h3>
 
-            <h3 className="text-center  ">Withdrawal Details</h3>
-            {lodaed ? <div className=" d-flex justify-content-center align-items-center " style={{ minHeight: '100vh' }}>
+
+
+
+            {lodaed ? <div className=" d-flex justify-content-center align-items-center " style={{ minHeight: '100vh',marginTop:"0px" }}>
                 <RotatingLines
                     visible={true}
                     height="96"
@@ -155,16 +158,16 @@ function Withdrawal() {
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Player ID</th>
-                            <th scope="col">User Name</th>
-                            <th scope="col">Opening Balance</th>
-                            <th scope="col">Withdraw Amount</th>
-                            <th scope="col">Transaction ID</th>
+                            <th className="text-center" scope="col">Player ID</th>
+                            <th className="text-center" scope="col">User Name</th>
+                            <th  className="text-center"scope="col">Opening Balance</th>
+                            <th className="text-center" scope="col">Withdraw Amount</th>
+                            <th className="text-center" scope="col">Transaction ID</th>
 
-                            <th scope="col">Remark</th>
-                            <th scope="col"> Status</th>
-                            <th scope="col">Withdrawal Details</th>
-                            <th scope="col">Action</th>
+                            <th className="text-center" scope="col">Remark</th>
+                            <th className="text-center" scope="col"> Status</th>
+                            <th  className="text-center"scope="col">Withdrawal Details</th>
+                            <th className="text-center" scope="col">Action</th>
 
 
 
@@ -175,14 +178,14 @@ function Withdrawal() {
                     <tbody>
                         {(data?.length > 0) ? currentPageData.map(item => (
                             <tr key={item}>
-                                <td>{item.player_id}</td>
-                                <td>{item.username}</td>
-                                <td>{item.opening_bal}</td>
-                                <td>{item.withdraw_amount}</td>
-                                <td>{item.transaction_id}</td>
+                                <td className="text-center">{item.player_id}</td>
+                                <td className="text-center">{item.username}</td>
+                                <td className="text-center">{item.opening_bal}</td>
+                                <td className="text-center">{item.withdraw_amount}</td>
+                                <td className="text-center">{item.transaction_id}</td>
 
-                                <td>{item.remarks}</td>
-                                <td>{(item.withdraw_status) === 0 ? <button type="button" class="btn btn-warning btnyellow-custom">Pending</button> : <div  >{(item.withdraw_status) === 1 ? <button type="button" class="btn btn-success btngreen-success-custom ">Approved</button> : <button type="button" class="btn btn-danger btnred-danger-custom">Rejected</button>}</div>}</td>
+                                <td className="text-center">{item.remarks}</td>
+                                <td className="text-center">{(item.withdraw_status) === 0 ? <button type="button" class="btn btn-warning btnyellow-custom">Pending</button> : <div  >{(item.withdraw_status) === 1 ? <button type="button" class="btn btn-success btngreen-success-custom ">Approved</button> : <button type="button" class="btn btn-danger btnred-danger-custom">Rejected</button>}</div>}</td>
 
                                 <td className="text-center"><Button variant="primary" onClick={() => handleOpenModal(item.withdraw_details)}>
                                     See details
@@ -190,7 +193,7 @@ function Withdrawal() {
                                 <td className="text-center">
                                     <Dropdown>
                                    
-                                     { (item.deposit_status)===0?  <Dropdown.Toggle  as="i" />:<>-</>}
+                                     { (item.withdraw_status)===0?  <Dropdown.Toggle  as="i" />:<>-</>}
 
                                         <Dropdown.Menu>
                                             <Dropdown.Item onClick={() => handleRemarkModal(item._id, 1)} style={{ color: "green" }}>Accept</Dropdown.Item>

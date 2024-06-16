@@ -3,6 +3,7 @@ import React from "react";
 import { Button, Container, ListGroup, Row } from "react-bootstrap";
 import { IoIosMenu } from "react-icons/io";
 import '../assets/css/style.css';
+
 import { TfiMenu } from "react-icons/tfi";
 import { IoLogOut, IoWallet } from "react-icons/io5";
 import { GiWallet } from "react-icons/gi";
@@ -41,7 +42,7 @@ const logout = () => {
                         <TfiMenu />
                         </Button>
                     </div>
-                    <div className="w-auto"><h3 style={{color:"white"}}>Admin Panel</h3></div>
+                    <div className="w-auto"><h3 style={{color:"white"}} onClick={()=>navigate("/admin")}>Admin Panel</h3></div>
                     <div className="w-auto"><img  src="/img/bg.png" alt="image" style={{width: "40px", height: "40px", borderRadius: "50%"}}/></div>
                 </Row>
         </header>
@@ -57,7 +58,7 @@ const logout = () => {
     <ListGroup as="ul">
     <ListGroup.Item as="li">
         
-        <a onClick={()=>{navigate("/admin")} }data-bs-dismiss="offcanvas" aria-label="Close" ><MdDashboard />Dashboard</a>
+        <a className onClick={()=>{navigate("/admin")} }data-bs-dismiss="offcanvas" aria-label="Close"   ><MdDashboard />Dashboard</a>
         </ListGroup.Item>
         <ListGroup.Item as="li">
         <a onClick={()=>{navigate("/deposit")} }data-bs-dismiss="offcanvas" aria-label="Close" ><IoWallet />Deposit</a>
@@ -67,8 +68,10 @@ const logout = () => {
         <a onClick={()=>{navigate("/withdraw")} }data-bs-dismiss="offcanvas" aria-label="Close" ><GiWallet /> Withdrawal</a>
         </ListGroup.Item>
         <ListGroup.Item as="li">
-          <Link to='/deposit'></Link>
-        <a href="#"><FaHistory /> Game Transition</a></ListGroup.Item>
+           
+          <a  data-bs-dismiss="offcanvas" aria-label="Close" ><FaHistory /> Game Transition</a>
+        {/* <a href="#"><FaHistory /> Game Transition</a> */}
+        </ListGroup.Item>
         <ListGroup.Item as="li">
         <a href="#" data-bs-dismiss="offcanvas" onClick={logout}>< IoLogOut /> Logout</a></ListGroup.Item>
         

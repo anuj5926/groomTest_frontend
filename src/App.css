@@ -803,3 +803,8 @@ width: 70px;
 .btn-primary{
   border: none;
 }
+/* css for hovering in left side bar */
+.hover-effect:hover {
+  color: #0056b3; /* Change this color as per your design */
+  text-decoration: underline;
+}

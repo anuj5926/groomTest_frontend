@@ -50,3 +50,14 @@
     filter: invert(100%);
     opacity: 1;
   }
+
+  /* css for hovering in left side bar */
+
+  .hover-effect {
+    color: inherit;
+    text-decoration: none;
+}
+.hover-effect:hover {
+  color: #000000; /* Change this color as per your design */
+  text-decoration: underline;
+}

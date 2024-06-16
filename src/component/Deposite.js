@@ -119,7 +119,8 @@ function Deposite() {
 
 
     <>    <Header />
-      <h3 className="text-center  ">Deposit Details</h3>
+      
+      <h3 className="text-center" style={{ color: '#000', backgroundColor: "rgb(213,197,197)", margin: '0px 0px 0px ', padding: '0.8rem' }}> Deposit Details</h3>
       {lodaed ? <div className=" d-flex justify-content-center align-items-center " style={{ minHeight: '100vh' }}>
         <RotatingLines
           visible={true}
@@ -136,15 +137,15 @@ function Deposite() {
         <table class="table table-striped">
           <thead>
             <tr>
-              <th scope="col">Player ID</th>
-              <th scope="col">User Name</th>
-              <th scope="col">Deposit Amount</th>
-              <th scope="col">Transaction ID</th>
-              <th scope="col">Opening Balance</th>
-              <th scope="col"> Status</th>
+              <th className="text-center"scope="col">Player ID</th>
+              <th className="text-center"scope="col">User Name</th>
+              <th className="text-center"scope="col">Deposit Amount</th>
+              <th className="text-center"scope="col">Transaction ID</th>
+              <th className="text-center"scope="col">Opening Balance</th>
+              <th className="text-center"scope="col"> Status</th>
 
-              <th scope="col">Remark</th>
-              <th scope="col"> Action</th>
+              <th className="text-center"scope="col">Remark</th>
+              <th className="text-center"scope="col"> Action</th>
 
 
             </tr>
@@ -152,15 +153,15 @@ function Deposite() {
           <tbody>
             {(data?.length > 0) ? currentPageData.map(item => (
               <tr key={item}>
-                <td>{item.player_id
+                <td className="text-center">{item.player_id
                 }</td>
-                <td>{item.username}</td>
-                <td>{item.deposit_amount}</td>
-                <td>{item.transaction_id}</td>
-                <td>{item.opening_bal}</td>
-                <td>{(item.deposit_status) === 0 ? <button type="button" class="btn btn-warning btnyellow-custom">Pending</button> : <div style={{ color: 'green' }}>{(item.deposit_status) === 1 ? <button type="button" class="btn btn-success btngreen-success-custom">Approved</button> : <button type="button" class="btn btn-danger btnred-danger-custom">Rejected</button>}</div>}</td>
+                <td className="text-center">{item.username}</td>
+                <td className="text-center">{item.deposit_amount}</td>
+                <td className="text-center">{item.transaction_id}</td>
+                <td className="text-center">{item.opening_bal}</td>
+                <td className="text-center">{(item.deposit_status) === 0 ? <button type="button" class="btn btn-warning btnyellow-custom">Pending</button> : <div style={{ color: 'green' }}>{(item.deposit_status) === 1 ? <button type="button" class="btn btn-success btngreen-success-custom">Approved</button> : <button type="button" class="btn btn-danger btnred-danger-custom">Rejected</button>}</div>}</td>
 
-                <td>{item.remarks}</td>
+                <td className="text-center">{item.remarks}</td>
                 <td className="text-center" >
                   <Dropdown>
                   { (item.deposit_status)===0?  <Dropdown.Toggle  as="i" />:<>-</>}
