@@ -10,6 +10,7 @@ import { GiWallet } from "react-icons/gi";
 import { FaHistory } from "react-icons/fa";
 import { useNavigate,Link} from 'react-router-dom';
 import Dashboard from "./Dashboard/Dashboard";
+import { MdOutlineHelp } from "react-icons/md";
 import { MdDashboard } from "react-icons/md";
  
 // import profile from '../assets/image/bg.png'
@@ -72,6 +73,8 @@ const logout = () => {
           <a  data-bs-dismiss="offcanvas" aria-label="Close" ><FaHistory /> Game Transition</a>
         {/* <a href="#"><FaHistory /> Game Transition</a> */}
         </ListGroup.Item>
+        <ListGroup.Item as="li">
+        <a href="#" data-bs-dismiss="offcanvas" onClick={()=>{navigate("/help")} }><MdOutlineHelp /> Help & Support</a></ListGroup.Item>
         <ListGroup.Item as="li">
         <a href="#" data-bs-dismiss="offcanvas" onClick={logout}>< IoLogOut /> Logout</a></ListGroup.Item>
         

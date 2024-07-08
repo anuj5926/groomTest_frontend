@@ -9,6 +9,7 @@ import Signup from './component/Signup/Signup';
 import Header from './component/Header';
 import Admin from './component/Admin/Admin';
 import Deposite from './component/Deposite';
+import Help from './component/Help';
 import ProtectedRoute from './component/ProtectedRoute'; // New component for protected routes
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         />
          <Route path="/deposit" element={<Deposite />} />
          <Route path="/withdraw" element={<Withdrawal />} />
+         <Route path="/help" element={<Help />} />
       </Routes>
     </Router>
      
